@@ -748,6 +748,9 @@ static void InitializeCPlusPlusFeatureTestMacros(const LangOptions &LangOpts,
     Builder.defineMacro("__cpp_modules", "1");
     Builder.defineMacro("__cpp_using_enum", "201907L");
   }
+  if (LangOpts.Coroutines) {
+    Builder.defineMacro("__cpp_impl_coroutine", "201902L");
+  }
   // C++23 features.
   if (LangOpts.CPlusPlus23) {
     Builder.defineMacro("__cpp_implicit_move", "202207L");
